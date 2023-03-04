@@ -590,12 +590,13 @@ where
     /// Combines total partial aggregates from all wheels and then lowers it to a final result
     #[inline]
     pub fn combine_and_lower(&self) -> Option<A::Aggregate> {
-        self.combine().map(|pa| self.aggregator.lower(pa))
+        self.landmark()
+        //self.combine().map(|pa| self.aggregator.lower(pa))
     }
 
     /// Combines total partial aggregates from all wheels into a PartialAggregate
     #[inline]
-    fn combine(&self) -> Option<A::PartialAggregate> {
+    pub fn landmark(&self) -> Option<A::Aggregate> {
         let wheels = [
             self.seconds_wheel.total(),
             self.minutes_wheel.total(),
@@ -606,6 +607,7 @@ where
             self.years_wheel.total(),
         ];
         Self::reduce(wheels, &self.aggregator)
+        .map(|partial| self.aggregator.lower(partial))
     }
 
     #[inline]

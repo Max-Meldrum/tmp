@@ -1,6 +1,6 @@
 #!/bin/bash
 
-batch_sizes=(10 100 1000 10000 100000)
+batch_sizes=(10 100 1000 10000)
 
 for batch_size in "${batch_sizes[@]}"
 do

@@ -16,8 +16,6 @@ struct Args {
     batch_size: usize,
     #[clap(short, long, action)]
     disk: bool,
-    #[clap(arg_enum, value_parser, default_value_t = DistributionMode::Zipf)]
-    mode: DistributionMode,
 }
 
 fn main() -> Result<()> {
@@ -54,7 +52,7 @@ fn main() -> Result<()> {
 
 fn no_wheeldb_rocks_setup() -> (wheeldb_rocks::no_wheel_db::NoWheelDB, &'static str) {
     let db = wheeldb_rocks::no_wheel_db::NoWheelDB::open_default("/tmp/no_wheeldb_rocks");
-    (db, "NoWheelDB")
+    (db, "RocksDB")
 }
 
 fn measure(

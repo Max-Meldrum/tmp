@@ -1,33 +1,15 @@
-use clap::ArgEnum;
 use duckdb::DropBehavior;
 use duckdb::{params, Connection, Result};
-use std::time::Instant;
 
-use hierarchical_aggregation_wheel::aggregator::AllAggregator;
 use hierarchical_aggregation_wheel::*;
 
-const MAX_SALES: u64 = 10000;
 const MAX_FARE: u64 = 1000;
-const MAX_TIMESTAMP_MS: u32 = 128000;
 
 // max 60 seconds ahead of watermark
 const MAX_TIMESTAMP_DIFF_MS: u64 = 60000;
 
 pub fn get_random_int_key() -> u32 {
     fastrand::u32(0..1000000)
-}
-
-pub fn get_timestamp() -> u32 {
-    fastrand::u32(1000..MAX_TIMESTAMP_MS)
-}
-
-pub fn get_random_sales() -> f64 {
-    fastrand::u64(0..MAX_SALES) as f64
-}
-
-pub fn get_random_country() -> tinystr::TinyAsciiStr<16> {
-    tinystr::tinystr!(16, "Sweden")
-    //tinystr::TinyAsciiStr::<16>::try_from_raw("Sweden").expect("")
 }
 
 // NYC Taxi
@@ -261,13 +243,6 @@ impl QueryInterval {
     }
 
 }
-
-#[derive(Copy, Debug, Clone, PartialEq, Eq, PartialOrd, Ord, ArgEnum)]
-pub enum DistributionMode {
-    Zipf,
-    Sequential,
-    Random,
-}
 pub fn generate_ride_data(watermark: u64, size: usize) -> Vec<RideData> {
     (0..size).map(|_| RideData::generate(watermark)).collect()
 }
@@ -367,9 +342,8 @@ pub fn duckdb_setup(disk: bool) -> (duckdb::Connection, &'static str) {
 }
 
 pub fn wheeldb_rocks_setup() -> (wheeldb_rocks::db::WheelDB, &'static str) {
-    let db = wheeldb_rocks::db::WheelDB::open_default_with_dimensions(
+    let db = wheeldb_rocks::db::WheelDB::open_default(
         "/tmp/wheeldb_rocks",
-        &["rate_code"],
     );
     (db, "WheelDB")
 }

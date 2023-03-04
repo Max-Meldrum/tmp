@@ -10,7 +10,7 @@ hierarchical_aggregation_wheel = { version = "0.1", path = "../hierarchical_aggr
 lz4_flex = "0.9.5"
 
 tinystr = "0.7.1"
-tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
+#tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
 fastrand = "1.8.0"
 clap = { version = "3.2", features = ["derive"] }
 rand = { version = "0.8.0" }

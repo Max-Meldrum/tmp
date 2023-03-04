@@ -1,6 +1,6 @@
 # WheelDB
 
-The benchmarks in this repo have been executed in a Linux environment. However, it should be possibly to also execute under MACOSX.
+The benchmarks in this repo have been executed in a Linux environment, more specfically debian-based linux.
 
 ## Install Rust
 
@@ -21,13 +21,15 @@ apt-get install g++ make libgflags-dev libsnappy-dev zlib1g-dev libbz2-dev liblz
 
 The benchmarks for **Streaming Ingestion** and **Analytical Queries** may be found in the benchmarks directory.
 
-To run the benchmarks, see the scripts within the directory.
+To run the benchmarks, see the scripts within the directory. Note that it may take a while depending on your configured hardware.
+If a run is killed, then you may not have enough DRAM (see paper on hardware requirements).
+
 To run all types of benchmarks, run the following:
 
 ```bash
-./query_bench.sh
 ./ingestion_bench.sh
-./pre_materialization_bench.sh
+./pre_materialize_bench.sh
+./query_bench.sh
 ```
 
 For micro-benchmarks of the HAW data structure, please enter the **hierarchical_aggregation_wheel** directory and execute the following.
@@ -35,11 +37,6 @@ For micro-benchmarks of the HAW data structure, please enter the **hierarchical_
 ```bash
 cargo bench
 ```
-
-*  Benchmarks (Streaming ingestion + Analytical)
-*  hierarchical aggregation wheel (HAW)
-    * + HAW micro-benchmarks
-*  wheeldb-rocks (WheelDB + RocksDB impl)
 
 ## License
 

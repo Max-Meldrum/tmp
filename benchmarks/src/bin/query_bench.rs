@@ -1,4 +1,4 @@
-use std::{time::Instant, borrow::Cow};
+use std::{time::Instant};
 
 use benchmarks::*;
 use clap::Parser;
@@ -22,8 +22,6 @@ struct Args {
     queries: usize,
     #[clap(short, long, action)]
     disk: bool,
-    #[clap(arg_enum, value_parser, default_value_t = DistributionMode::Zipf)]
-    mode: DistributionMode,
 }
 
 fn main() -> Result<()> {
@@ -38,13 +36,13 @@ fn main() -> Result<()> {
 
     let point_queries_low_interval = QueryGenerator::generate_low_interval_point_queries(total_queries);
     let point_queries_high_interval = QueryGenerator::generate_high_interval_point_queries(total_queries);
-    let olap_queries_low_interval = QueryGenerator::generate_low_interval_olap(total_queries);
-    let olap_queries_high_interval = QueryGenerator::generate_high_interval_olap(total_queries);
+    //let olap_queries_low_interval = QueryGenerator::generate_low_interval_olap(total_queries);
+    //let olap_queries_high_interval = QueryGenerator::generate_high_interval_olap(total_queries);
 
     let wheeldb_point_queries_low_interval = point_queries_low_interval.clone();
     let wheeldb_point_queries_high_interval = point_queries_high_interval.clone();
-    let wheeldb_olap_queries_low_interval = olap_queries_low_interval.clone();
-    let wheeldb_olap_queries_high_interval= olap_queries_high_interval.clone();
+    //let wheeldb_olap_queries_low_interval = olap_queries_low_interval.clone();
+    //let wheeldb_olap_queries_high_interval= olap_queries_high_interval.clone();
 
     let total_entries = batches.len() * events_per_min;
     println!("Running with total entries {}", total_entries);
@@ -65,6 +63,7 @@ fn main() -> Result<()> {
         wheeldb_rocks_append_batch(batch, &mut wheeldb);
         wheeldb.advance_to(wheeldb.watermark() + 60000u64);
     }
+    wheeldb.materialize_merge();
     wheeldb.flush();
 
     println!(
@@ -93,15 +92,9 @@ fn wheeldb_run(id: &str, _watermark: u64, db: &wheeldb_rocks::WheelDB, queries: 
     for query in queries {
         let now = Instant::now();
         let wheel_opt = match query.query_type {
-            QueryType::Keyed(pu_location_id) => db.get(pu_location_id.to_le_bytes()).map(|w| Cow::Owned(w)),
-            QueryType::All => Some(Cow::Borrowed(db.get_star_wheel())),
-        };
-        /* 
-        let wheel_opt = match query.query_type {
             QueryType::Keyed(pu_location_id) => db.get(pu_location_id.to_le_bytes()),
             QueryType::All => db.get_star_wheel_from_disk(),
         };
-        */
         if let Some(wheel) = wheel_opt {
             match query.interval {
                 QueryInterval::Seconds(secs) => {
