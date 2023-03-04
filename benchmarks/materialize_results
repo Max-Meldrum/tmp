@@ -1,0 +1,54 @@
+Running pre materialize bench with batch size 10000
+Running with Args {
+    keys: 1000000,
+    num_batches: 1000,
+    batch_size: 10000,
+    disk: true,
+    mode: Zipf,
+}
+WheelDB ingestion ran at 215174.69254355223 ops/s (took 46.47s)
+batch latencies:						min: 37278us	p50: 46199us	p99: 52415us	p99.9: 62237us	p99.99: 67671us	p99.999: 67671us	 max: 67671us
+mean latency 46473.09300000002
+WheelDB-merge latencies:						min:    5us	p50:    9us	p99:   18us	p99.9:   32us	p99.99:   60us	p99.999:   79us	 max:  676us
+merge mean latency 9.18242670151067
+NoWheelDB ingestion ran at 240506.28034290363 ops/s (took 41.58s)
+batch latencies:						min: 34278us	p50: 41215us	p99: 46479us	p99.9: 56373us	p99.99: 56645us	p99.999: 56645us	 max: 56645us
+mean latency 41578.31600000001
+RocksDB-merge latencies:						min:    0us	p50:    0us	p99:    0us	p99.9:    1us	p99.99:   10us	p99.999:   37us	 max:   55us
+merge mean latency 0.008592562027676531
+Running pre materialize bench with batch size 50000
+Running with Args {
+    keys: 1000000,
+    num_batches: 1000,
+    batch_size: 50000,
+    disk: true,
+    mode: Zipf,
+}
+WheelDB ingestion ran at 228481.3861200192 ops/s (took 218.84s)
+batch latencies:						min: 162328us	p50: 178663us	p99: 564415us	p99.9: 639615us	p99.99: 665471us	p99.999: 665471us	 max: 665471us
+mean latency 218835.47999999972
+WheelDB-merge latencies:						min:    7us	p50:   10us	p99:   19us	p99.9:   46us	p99.99:   86us	p99.999:  167us	 max:  254us
+merge mean latency 10.3271133729149
+NoWheelDB ingestion ran at 283099.1376937852 ops/s (took 176.62s)
+batch latencies:						min: 160576us	p50: 175935us	p99: 192191us	p99.9: 207999us	p99.99: 236887us	p99.999: 236887us	 max: 236887us
+mean latency 176615.84000000003
+RocksDB-merge latencies:						min:    0us	p50:    1us	p99:    2us	p99.9:   10us	p99.99:   33us	p99.999:   69us	 max:   90us
+merge mean latency 1.037101987483667
+Running pre materialize bench with batch size 100000
+Running with Args {
+    keys: 1000000,
+    num_batches: 1000,
+    batch_size: 100000,
+    disk: true,
+    mode: Zipf,
+}
+WheelDB ingestion ran at 249113.68247721167 ops/s (took 401.42s)
+batch latencies:						min: 324656us	p50: 361999us	p99: 990527us	p99.9: 1295039us	p99.99: 1852031us	p99.999: 1852031us	 max: 1852031us
+mean latency 401421.70399999956
+WheelDB-merge latencies:						min:    9us	p50:   11us	p99:   22us	p99.9:   50us	p99.99:   93us	p99.999:  134us	 max:  144us
+merge mean latency 11.921455806951988
+NoWheelDB ingestion ran at 286399.6688436239 ops/s (took 349.16s)
+batch latencies:						min: 324320us	p50: 347439us	p99: 383119us	p99.9: 408559us	p99.99: 509871us	p99.999: 509871us	 max: 509871us
+mean latency 349161.0080000001
+RocksDB-merge latencies:						min:    1us	p50:    2us	p99:    4us	p99.9:   13us	p99.99:   37us	p99.999:   81us	 max:   96us
+merge mean latency 2.124429773284736

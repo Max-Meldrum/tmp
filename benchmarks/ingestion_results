@@ -1,0 +1,81 @@
+Running ingestion bench with batch size 10
+Running with Args {
+    keys: 1000000,
+    num_batches: 10,
+    batch_size: 10000,
+    disk: true,
+    mode: Zipf,
+}
+Ingestion records 100000
+duckdb [disk] ingestion ran at 83209.5244950118 ops/s (took 1.20s)
+batch latencies:						min: 103736us	p50: 107359us	p99: 225055us	p99.9: 225055us	p99.99: 225055us	p99.999: 225055us	 max: 225055us
+mean latency 120166.59999999999
+WheelDB ingestion ran at 357467.51424597413 ops/s (took 0.28s)
+batch latencies:						min: 25978us	p50: 28274us	p99: 29209us	p99.9: 29209us	p99.99: 29209us	p99.999: 29209us	 max: 29209us
+mean latency 27972.999999999996
+NoWheelDB ingestion ran at 360560.3251677237 ops/s (took 0.28s)
+batch latencies:						min: 25888us	p50: 27553us	p99: 30293us	p99.9: 30293us	p99.99: 30293us	p99.999: 30293us	 max: 30293us
+mean latency 27733.1
+Running ingestion bench with batch size 100
+Running with Args {
+    keys: 1000000,
+    num_batches: 100,
+    batch_size: 10000,
+    disk: true,
+    mode: Zipf,
+}
+Ingestion records 1000000
+duckdb [disk] ingestion ran at 88399.80615690506 ops/s (took 11.31s)
+batch latencies:						min: 102296us	p50: 105935us	p99: 253903us	p99.9: 282751us	p99.99: 282751us	p99.999: 282751us	 max: 282751us
+mean latency 113120.24000000005
+WheelDB ingestion ran at 337206.1572900144 ops/s (took 2.97s)
+batch latencies:						min: 24639us	p50: 29572us	p99: 43865us	p99.9: 48199us	p99.99: 48199us	p99.999: 48199us	 max: 48199us
+mean latency 29653.9
+NoWheelDB ingestion ran at 338281.00881621195 ops/s (took 2.96s)
+batch latencies:						min: 25123us	p50: 29835us	p99: 31985us	p99.9: 32099us	p99.99: 32099us	p99.999: 32099us	 max: 32099us
+mean latency 29559.88
+Running ingestion bench with batch size 1000
+Running with Args {
+    keys: 1000000,
+    num_batches: 1000,
+    batch_size: 10000,
+    disk: true,
+    mode: Zipf,
+}
+Ingestion records 10000000
+duckdb [disk] ingestion ran at 85528.73837410746 ops/s (took 116.92s)
+batch latencies:						min: 102296us	p50: 110567us	p99: 266831us	p99.9: 293935us	p99.99: 337727us	p99.999: 337727us	 max: 337727us
+mean latency 116918.7100000001
+WheelDB ingestion ran at 315340.0391107421 ops/s (took 31.71s)
+batch latencies:						min: 26398us	p50: 31823us	p99: 35179us	p99.9: 47935us	p99.99: 60291us	p99.999: 60291us	 max: 60291us
+mean latency 31710.583999999995
+NoWheelDB ingestion ran at 318718.2630313619 ops/s (took 31.38s)
+batch latencies:						min: 26682us	p50: 31609us	p99: 34483us	p99.9: 35335us	p99.99: 35405us	p99.999: 35405us	 max: 35405us
+mean latency 31374.38900000002
+Running ingestion bench with batch size 10000
+Running with Args {
+    keys: 1000000,
+    num_batches: 10000,
+    batch_size: 10000,
+    disk: true,
+    mode: Zipf,
+}
+Ingestion records 100000000
+duckdb [disk] ingestion ran at 79675.31044475028 ops/s (took 1255.09s)
+batch latencies:						min: 91640us	p50: 123623us	p99: 217367us	p99.9: 528895us	p99.99: 1701759us	p99.999: 2548223us	 max: 2548223us
+mean latency 125508.20879999989
+WheelDB ingestion ran at 270287.63055257784 ops/s (took 369.98s)
+batch latencies:						min: 25012us	p50: 35889us	p99: 48511us	p99.9: 497983us	p99.99: 717023us	p99.999: 2075775us	 max: 2075775us
+mean latency 36985.20849999996
+NoWheelDB ingestion ran at 314057.0408298806 ops/s (took 318.41s)
+batch latencies:						min: 25268us	p50: 31846us	p99: 37085us	p99.9: 41809us	p99.99: 47519us	p99.999: 48369us	 max: 48369us
+mean latency 31839.676700000036
+Running ingestion bench with batch size 100000
+Running with Args {
+    keys: 1000000,
+    num_batches: 100000,
+    batch_size: 10000,
+    disk: true,
+    mode: Zipf,
+}
+Ingestion records 1000000000

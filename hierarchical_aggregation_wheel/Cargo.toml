@@ -1,0 +1,50 @@
+[package]
+name = "hierarchical_aggregation_wheel"
+version = "0.1.0"
+edition = "2021"
+authors = ["Anon"]
+readme = "README.md"
+license = "Apache-2.0 & MIT"
+
+[features]
+default = ["years_size_10", "std", "rkyv"]
+std = ["time/std", "ahash/std"]
+alloc = ["rkyv/alloc"]
+years_size_10 = []
+years_size_100 = []
+macros = ["time/macros"]
+drill_down = ["alloc"]
+
+[dependencies]
+thiserror = "1.0"
+ahash = "0.8"
+time = { version = "0.3.17", default-features = false }
+
+# optional
+rkyv = { version = "0.7.39", features = ["copy", "copy_unsafe"], optional = true }
+
+[dev-dependencies]
+fastrand = "1.8.0"
+rand = "0.8.5"
+criterion = "0.4"
+lz4_flex = "0.9.5"
+zstd = "0.11"
+
+
+[[example]]
+name = "serde"
+required-features = ["rkyv"]
+
+[[bench]]
+name = "insert"
+harness = false
+
+[[bench]]
+name = "queries"
+harness = false
+
+
+[[bench]]
+name = "serde"
+harness = false
+required-features = ["rkyv"]

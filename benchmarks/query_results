@@ -1,0 +1,87 @@
+Running query bench with events per min 100
+Running with Args {
+    keys: 1000000,
+    num_batches: 100,
+    batch_size: 10000,
+    events_per_min: 100,
+    queries: 1000,
+    disk: true,
+    mode: Zipf,
+}
+Running with total entries 1008000
+Finished preparing duckdb [disk]
+Finished preparing WheelDB
+DuckDB OLAP Low Intervals ran with 2176.370923249191 queries/s (took 0.46s)
+DuckDB OLAP Low Intervals latencies:						min:  351us	p50:  459us	p99:  529us	p99.9:  570us	p99.99: 1182us	p99.999: 1182us	 max: 1182us 	 count: 1000
+DuckDB OLAP High Intervals ran with 463.63830796683146 queries/s (took 2.16s)
+DuckDB OLAP High Intervals latencies:						min:  443us	p50: 2491us	p99: 3575us	p99.9: 3798us	p99.99: 3825us	p99.999: 3825us	 max: 3825us 	 count: 1000
+DuckDB Point Queries Low Intervals ran with 2110.8268530948944 queries/s (took 0.47s)
+DuckDB Point Queries Low Intervals latencies:						min:  357us	p50:  474us	p99:  542us	p99.9:  573us	p99.99:  664us	p99.999:  664us	 max:  664us 	 count: 1000
+DuckDB Point Queries High Intervals ran with 807.456701143722 queries/s (took 1.24s)
+DuckDB Point Queries High Intervals latencies:						min:  395us	p50: 1514us	p99: 2066us	p99.9: 2283us	p99.99: 2350us	p99.999: 2350us	 max: 2350us 	 count: 1000
+WheelDB OLAP Low Intervals ran with 176600.44150110375 queries/s (took 0.01s)
+WheelDB OLAP Low Intervals latencies:						min:    5us	p50:    5us	p99:   11us	p99.9:   18us	p99.99:   46us	p99.999:   46us	 max:   46us 	 count: 1000
+WheelDB OLAP High Intervals ran with 181175.83114412538 queries/s (took 0.01s)
+WheelDB OLAP High Intervals latencies:						min:    5us	p50:    5us	p99:    9us	p99.9:   23us	p99.99:   27us	p99.999:   27us	 max:   27us 	 count: 1000
+WheelDB Point Queries Low Intervals ran with 178161.0219316218 queries/s (took 0.01s)
+WheelDB Point Queries Low Intervals latencies:						min:    4us	p50:    5us	p99:   11us	p99.9:   14us	p99.99:   26us	p99.999:   26us	 max:   26us 	 count: 1000
+WheelDB Point Queries High Intervals ran with 183590.6662505278 queries/s (took 0.01s)
+WheelDB Point Queries High Intervals latencies:						min:    4us	p50:    5us	p99:    9us	p99.9:   14us	p99.99:   14us	p99.999:   14us	 max:   14us 	 count: 1000
+Running query bench with events per min 1000
+Running with Args {
+    keys: 1000000,
+    num_batches: 100,
+    batch_size: 10000,
+    events_per_min: 1000,
+    queries: 1000,
+    disk: true,
+    mode: Zipf,
+}
+Running with total entries 10080000
+Finished preparing duckdb [disk]
+Finished preparing WheelDB
+DuckDB OLAP Low Intervals ran with 1515.9317606349814 queries/s (took 0.66s)
+DuckDB OLAP Low Intervals latencies:						min:  431us	p50:  621us	p99:  939us	p99.9: 1227us	p99.99: 2349us	p99.999: 2349us	 max: 2349us 	 count: 1000
+DuckDB OLAP High Intervals ran with 106.75198399096008 queries/s (took 9.37s)
+DuckDB OLAP High Intervals latencies:						min:  975us	p50: 9280us	p99: 17382us	p99.9: 19839us	p99.99: 23469us	p99.999: 23469us	 max: 23469us 	 count: 1000
+DuckDB Point Queries Low Intervals ran with 1605.2539319089808 queries/s (took 0.62s)
+DuckDB Point Queries Low Intervals latencies:						min:  461us	p50:  623us	p99:  706us	p99.9:  743us	p99.99:  761us	p99.999:  761us	 max:  761us 	 count: 1000
+DuckDB Point Queries High Intervals ran with 145.78142876675486 queries/s (took 6.86s)
+DuckDB Point Queries High Intervals latencies:						min:  711us	p50: 6733us	p99: 12347us	p99.9: 13098us	p99.99: 13268us	p99.999: 13268us	 max: 13268us 	 count: 1000
+WheelDB OLAP Low Intervals ran with 146810.54099684357 queries/s (took 0.01s)
+WheelDB OLAP Low Intervals latencies:						min:    6us	p50:    6us	p99:   16us	p99.9:   37us	p99.99:   48us	p99.999:   48us	 max:   48us 	 count: 1000
+WheelDB OLAP High Intervals ran with 153376.58553045293 queries/s (took 0.01s)
+WheelDB OLAP High Intervals latencies:						min:    5us	p50:    6us	p99:   13us	p99.9:   21us	p99.99:   23us	p99.999:   23us	 max:   23us 	 count: 1000
+WheelDB Point Queries Low Intervals ran with 116746.05398337537 queries/s (took 0.01s)
+WheelDB Point Queries Low Intervals latencies:						min:    6us	p50:    8us	p99:   17us	p99.9:   27us	p99.99:   31us	p99.999:   31us	 max:   31us 	 count: 1000
+WheelDB Point Queries High Intervals ran with 124660.30068064523 queries/s (took 0.01s)
+WheelDB Point Queries High Intervals latencies:						min:    5us	p50:    7us	p99:   17us	p99.9:   23us	p99.99:   26us	p99.999:   26us	 max:   26us 	 count: 1000
+Running query bench with events per min 10000
+Running with Args {
+    keys: 1000000,
+    num_batches: 100,
+    batch_size: 10000,
+    events_per_min: 10000,
+    queries: 1000,
+    disk: true,
+    mode: Zipf,
+}
+Running with total entries 100800000
+Finished preparing duckdb [disk]
+Finished preparing WheelDB
+DuckDB OLAP Low Intervals ran with 681.2129705401958 queries/s (took 1.47s)
+DuckDB OLAP Low Intervals latencies:						min:  572us	p50: 1032us	p99: 3543us	p99.9: 3785us	p99.99: 3865us	p99.999: 3865us	 max: 3865us 	 count: 1000
+DuckDB OLAP High Intervals ran with 9.161270874325574 queries/s (took 109.16s)
+DuckDB OLAP High Intervals latencies:						min: 3439us	p50: 128627us	p99: 255511us	p99.9: 280207us	p99.99: 303503us	p99.999: 303503us	 max: 303503us 	 count: 1000
+DuckDB Point Queries Low Intervals ran with 866.3418231366634 queries/s (took 1.15s)
+DuckDB Point Queries Low Intervals latencies:						min:  644us	p50:  941us	p99: 2147us	p99.9: 2403us	p99.99: 2479us	p99.999: 2479us	 max: 2479us 	 count: 1000
+DuckDB Point Queries High Intervals ran with 15.810487602995089 queries/s (took 63.25s)
+DuckDB Point Queries High Intervals latencies:						min: 2518us	p50: 57689us	p99: 134599us	p99.9: 143959us	p99.99: 144095us	p99.999: 144095us	 max: 144095us 	 count: 1000
+WheelDB OLAP Low Intervals ran with 143657.52047119665 queries/s (took 0.01s)
+WheelDB OLAP Low Intervals latencies:						min:    6us	p50:    6us	p99:   17us	p99.9:   27us	p99.99:   50us	p99.999:   50us	 max:   50us 	 count: 1000
+WheelDB OLAP High Intervals ran with 151162.43915711824 queries/s (took 0.01s)
+WheelDB OLAP High Intervals latencies:						min:    6us	p50:    6us	p99:   14us	p99.9:   17us	p99.99:   24us	p99.999:   24us	 max:   24us 	 count: 1000
+WheelDB Point Queries Low Intervals ran with 102075.1885839109 queries/s (took 0.01s)
+WheelDB Point Queries Low Intervals latencies:						min:    7us	p50:    9us	p99:   19us	p99.9:   39us	p99.99:   40us	p99.999:   40us	 max:   40us 	 count: 1000
+WheelDB Point Queries High Intervals ran with 111100.00111100002 queries/s (took 0.01s)
+WheelDB Point Queries High Intervals latencies:						min:    7us	p50:    8us	p99:   18us	p99.9:   26us	p99.99:   27us	p99.999:   27us	 max:   27us 	 count: 1000

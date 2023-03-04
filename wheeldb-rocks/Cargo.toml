@@ -1,0 +1,17 @@
+[package]
+name = "wheeldb-rocks"
+version = "0.1.0"
+edition = "2021"
+
+
+[dependencies]
+rocksdb = { version = "0.20.1", default-features = false }
+hierarchical_aggregation_wheel = { version = "0.1", path = "../hierarchical_aggregation_wheel", features = ["rkyv"] }
+ahash = "0.8"
+thiserror = "1.0"
+rkyv = "0.7.39"
+smallvec = { version = "1.10.0", features = ["union"] }
+schnellru = "0.2.0"
+minstant = "0.1"
+lz4_flex = { version = "0.9.5", default-features = false, features = ["checked-decode"] }
+hdrhistogram = "7"
